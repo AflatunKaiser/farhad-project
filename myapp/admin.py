@@ -10,4 +10,4 @@ class ProfileAdmin(admin.ModelAdmin):
         'image'
     ]
 
-admin.site.register(Profile, ProfileAdmin )
+admin.site.register(Profile, ProfileAdmin )  
