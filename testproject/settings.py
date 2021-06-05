@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6hn4u4$nnjqal(!6ye-bvs#ffh$(c6n^8jm)q6z9^_=z!z_d5&'
+SECRET_KEY = 'django-insecure-j9=%)f@z!mm%8w#eje$#50hv$dws@pd+z_fcaa*7hl#kqsd44g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,17 +41,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'album',
-    'blog'
+    'blog',
+    'taggit'
+    # 'storages' 
 ]
+
+INSTALLED_APPS += ('django_summernote', )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'testproject.urls'
@@ -59,7 +66,7 @@ ROOT_URLCONF = 'testproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,13 +131,33 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'static_root'
- 
-MEDIA_URL = '/media/'
+STATICFILES_DIRS =[BASE_DIR / 'static']  
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# whitenoise for stataticfile
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+MEDIA_URL = '/media/' 
 MEDIA_ROOT = BASE_DIR / 'media/'
+# storage for media file
+# AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVFNJAGMRS'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
+# AWS_S3_FILE_OVERWRITE = True
+# AWS_DEFAULT_ACL = None
+# AWS_QUERYSTRING_AUTH = False
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+ 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 django_heroku.settings(locals())

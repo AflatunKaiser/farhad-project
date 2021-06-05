@@ -1,22 +1,25 @@
-{% load static %}
 <!DOCTYPE html>
- <html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>djnago app</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     </head>
     <body>
-       {% for i in profile %}
-        <h1>{{ i.name}}</h1>
-        <h1>{{ i.age}}</h1>
-        <h1>{{ i.address}}</h1>
-        <img  src="{{i.image.url}}" />
-        
-      {% endfor %}  
+    <h1>FIRST DJANGO PROJECT </h1>
+    {% for i in profile %}
+    <h2>{{i.name}} </h2>
+    <h2>{{i.age}} </h2>
+    <h3>{{i.address}} </h3>
+    <img src="{{i.image.url}}" />
+    <hr />    
+    {% endfor %}   
     </body>
 </html>

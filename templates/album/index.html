@@ -1,5 +1,5 @@
-{% load static %}
- <!doctype html>
+{% load static%}
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="{% static "assets/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+<link href="{% static "assets/dist/css/bootstrap.min.css"%}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -87,14 +87,14 @@
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-      {% for album in albums %}
+      {% for album in albums%}
         <div class="col">
+        
           <div class="card shadow-sm">
-            <img src="{{album.thumbnail.url}}" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+           <img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{album.thumbnail.url}}"/> 
 
             <div class="card-body">
-              <p class="card-text">{{ album.description }} </p>
+              <p class="card-text">{{albums.description}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -104,13 +104,11 @@
               </div>
             </div>
           </div>
-        </div>
-{% endfor %}
-
-
-      </div>
-    </div>
-  </div>
+         </div>
+   {% endfor %}  
+   </div>
+   </div>
+   </div>
 
 </main>
 
@@ -120,7 +118,6 @@
       <a href="#">Back to top</a>
     </p>
     <p class="mb-1">django Album app   &copy; All Right Reserved</p>
-    
   </div>
 </footer>
 
