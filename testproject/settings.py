@@ -147,9 +147,9 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'nimutest2020',
-    'API_KEY': '922572428639368',
-    'API_SECRET': '9KIX5YQnQciyGxuL_vYTGx2PxCQ'
+    'CLOUD_NAME': 'drfnyzxdx',
+    'API_KEY': '549921444131947',
+    'API_SECRET': 'uOTbkbmpaN8uoOz3ok2io-evMDs'
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
