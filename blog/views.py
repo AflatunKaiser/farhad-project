@@ -15,7 +15,7 @@ def blog_list(request, category_slug=None):
     categories = Category.objects.all()
     posts = Post.objects.all()
 
-    latest_post = Post.objects.all()
+    latest_post = Post.objects.all()[:3]
     
     paginator = Paginator(posts, 3)
     page_number = request.GET.get('page')
